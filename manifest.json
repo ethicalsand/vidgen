@@ -1,0 +1,10 @@
+{
+  "id": "obsidian-vidgen",
+  "name": "VidGen - AI Video Generator",
+  "version": "1.0.0",
+  "minAppVersion": "1.0.0",
+  "description": "Generate AI videos directly from Obsidian using Luma AI or Runway ML. Enter a prompt and get a video.",
+  "author": "VidGen",
+  "authorUrl": "",
+  "isDesktopOnly": true
+}

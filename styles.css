@@ -1,0 +1,546 @@
+/* ─── VidGen Plugin Styles ─────────────────────────────────────────── */
+
+.vidgen-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  font-family: var(--font-interface);
+  background: var(--background-primary);
+}
+
+/* ── Header ── */
+.vidgen-header {
+  padding: 20px 20px 12px;
+  border-bottom: 1px solid var(--background-modifier-border);
+  background: var(--background-secondary);
+}
+
+.vidgen-title {
+  margin: 0 0 2px 0;
+  font-size: 1.4em;
+  font-weight: 700;
+  color: var(--text-accent);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vidgen-subtitle {
+  margin: 0;
+  font-size: 0.8em;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ── Content ── */
+.vidgen-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Sections ── */
+.vidgen-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.vidgen-label {
+  font-size: 0.75em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.vidgen-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ── Prompt Input ── */
+.vidgen-prompt-input {
+  width: 100%;
+  min-height: 100px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1.5px solid var(--background-modifier-border);
+  background: var(--background-primary-alt);
+  color: var(--text-normal);
+  font-family: var(--font-text);
+  font-size: 0.92em;
+  line-height: 1.6;
+  resize: vertical;
+  transition: border-color 0.15s ease;
+  box-sizing: border-box;
+}
+
+.vidgen-prompt-input:focus {
+  outline: none;
+  border-color: var(--text-accent);
+  box-shadow: 0 0 0 3px rgba(var(--color-accent-1-rgb, 100, 100, 200), 0.12);
+}
+
+.vidgen-prompt-input::placeholder {
+  color: var(--text-faint);
+  line-height: 1.5;
+}
+
+.vidgen-char-count {
+  font-size: 0.72em;
+  color: var(--text-faint);
+  text-align: right;
+}
+
+.vidgen-char-warn {
+  color: var(--color-orange, #f59e0b);
+}
+
+.vidgen-char-over {
+  color: var(--color-red, #ef4444);
+  font-weight: 600;
+}
+
+/* ── Random / Inspire button ── */
+.vidgen-random-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-secondary);
+  color: var(--text-muted);
+  font-size: 0.75em;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.vidgen-random-btn:hover {
+  background: var(--interactive-hover);
+  color: var(--text-normal);
+  border-color: var(--text-accent);
+}
+
+/* ── Options ── */
+.vidgen-option-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.vidgen-option-label {
+  font-size: 0.72em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.vidgen-option-row {
+  display: flex;
+  gap: 12px;
+}
+
+/* Aspect ratio buttons */
+.vidgen-ratio-buttons {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.vidgen-ratio-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1.5px solid var(--background-modifier-border);
+  background: var(--background-primary-alt);
+  color: var(--text-muted);
+  font-size: 0.8em;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.vidgen-ratio-btn:hover {
+  border-color: var(--text-accent);
+  color: var(--text-normal);
+}
+
+.vidgen-ratio-btn.active {
+  border-color: var(--text-accent);
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  font-weight: 600;
+}
+
+/* Selects */
+.vidgen-select {
+  width: 100%;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1.5px solid var(--background-modifier-border);
+  background: var(--background-primary-alt);
+  color: var(--text-normal);
+  font-size: 0.85em;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.vidgen-select:focus {
+  outline: none;
+  border-color: var(--text-accent);
+}
+
+/* Provider badge */
+.vidgen-provider-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vidgen-provider-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 0.75em;
+  font-weight: 600;
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  color: var(--text-muted);
+}
+
+.vidgen-provider-badge[data-provider="luma"] {
+  background: rgba(99, 102, 241, 0.1);
+  border-color: rgba(99, 102, 241, 0.4);
+  color: #818cf8;
+}
+
+.vidgen-provider-badge[data-provider="runway"] {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.4);
+  color: #f87171;
+}
+
+/* ── Generate Button ── */
+.vidgen-generate-wrapper {
+  padding-top: 4px;
+}
+
+.vidgen-generate-btn {
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: none;
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+  font-size: 1em;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.15s ease;
+  letter-spacing: 0.02em;
+}
+
+.vidgen-generate-btn:hover:not(:disabled) {
+  background: var(--interactive-accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.vidgen-generate-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.vidgen-generate-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ── Status ── */
+.vidgen-status-section {
+  border-radius: 10px;
+  border: 1px solid var(--background-modifier-border);
+  padding: 14px 16px;
+  background: var(--background-secondary);
+}
+
+.vidgen-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.vidgen-status-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.vidgen-status[data-status="queued"] .vidgen-status-icon { color: var(--text-muted); }
+.vidgen-status[data-status="dreaming"] .vidgen-status-icon { color: #a78bfa; }
+.vidgen-status[data-status="processing"] .vidgen-status-icon { color: var(--text-accent); }
+.vidgen-status[data-status="completed"] .vidgen-status-icon { color: #34d399; }
+.vidgen-status[data-status="failed"] .vidgen-status-icon { color: #f87171; }
+
+.vidgen-status-text {
+  font-size: 0.88em;
+  color: var(--text-normal);
+}
+
+/* Progress bar */
+.vidgen-progress-bar {
+  height: 3px;
+  background: var(--background-modifier-border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.vidgen-progress-fill {
+  height: 100%;
+  width: 40%;
+  background: var(--interactive-accent);
+  border-radius: 2px;
+  animation: vidgen-progress 1.5s ease-in-out infinite;
+}
+
+@keyframes vidgen-progress {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(300%); }
+}
+
+/* ── Output ── */
+.vidgen-output-section {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--background-modifier-border);
+}
+
+.vidgen-output-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.vidgen-video-wrapper {
+  background: #000;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.vidgen-video {
+  width: 100%;
+  display: block;
+  max-height: 300px;
+  object-fit: contain;
+}
+
+.vidgen-no-video {
+  padding: 20px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85em;
+}
+
+.vidgen-output-meta {
+  padding: 12px 14px 4px;
+  background: var(--background-secondary);
+}
+
+.vidgen-output-prompt {
+  margin: 0;
+  font-size: 0.82em;
+  color: var(--text-muted);
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.vidgen-output-actions {
+  display: flex;
+  gap: 8px;
+  padding: 10px 14px 14px;
+  background: var(--background-secondary);
+}
+
+.vidgen-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--background-modifier-border);
+  background: var(--background-primary);
+  color: var(--text-normal);
+  font-size: 0.82em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.12s ease;
+}
+
+.vidgen-action-btn:hover {
+  background: var(--interactive-hover);
+  border-color: var(--text-accent);
+  color: var(--text-accent);
+}
+
+/* ── History ── */
+.vidgen-history-section {
+  padding: 0 0 20px;
+}
+
+.vidgen-history-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 8px;
+  border-top: 1px solid var(--background-modifier-border);
+  padding-top: 16px;
+}
+
+.vidgen-history-title {
+  margin: 0;
+  font-size: 0.8em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.vidgen-clear-btn {
+  padding: 4px;
+  border: none;
+  background: transparent;
+  color: var(--text-faint);
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  transition: color 0.12s ease;
+}
+
+.vidgen-clear-btn:hover {
+  color: #f87171;
+}
+
+.vidgen-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.vidgen-history-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  transition: border-color 0.12s ease;
+}
+
+.vidgen-history-item:hover {
+  border-color: var(--text-accent);
+}
+
+.vidgen-history-icon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.vidgen-history-item[data-status="completed"] .vidgen-history-icon { color: #34d399; }
+.vidgen-history-item[data-status="failed"] .vidgen-history-icon { color: #f87171; }
+.vidgen-history-item[data-status="processing"] .vidgen-history-icon,
+.vidgen-history-item[data-status="queued"] .vidgen-history-icon,
+.vidgen-history-item[data-status="dreaming"] .vidgen-history-icon { color: var(--text-accent); }
+
+.vidgen-history-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.vidgen-history-prompt {
+  margin: 0;
+  font-size: 0.83em;
+  color: var(--text-normal);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.vidgen-history-meta {
+  font-size: 0.72em;
+  color: var(--text-faint);
+}
+
+.vidgen-history-time {
+  font-size: 0.7em;
+  color: var(--text-faint);
+}
+
+.vidgen-history-play {
+  flex-shrink: 0;
+  padding: 4px;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  transition: color 0.12s ease;
+}
+
+.vidgen-history-play:hover {
+  color: var(--text-accent);
+}
+
+/* ── Utilities ── */
+.vidgen-hidden {
+  display: none !important;
+}
+
+/* ── Settings Page ── */
+.vidgen-settings h3 {
+  margin-top: 20px;
+  margin-bottom: 4px;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding-bottom: 6px;
+}
+
+.vidgen-settings-desc {
+  color: var(--text-muted);
+  font-size: 0.9em;
+  margin-bottom: 16px;
+}
+
+.vidgen-about {
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  font-size: 0.85em;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
